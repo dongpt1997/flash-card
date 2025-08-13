@@ -77,6 +77,19 @@
       card.classList.toggle("flipped");
     });
    
+// const images = [
+//   'images/danang1.jpg',
+//   'images/ruongbacthang.jpg',
+//   'images/hinh-nen-18.jpg',
+//   'images/hinh-nen-20.jpg',
+// ];
+// let currentBg = 0;
+// const body = document.getElementById('body');
+
+// setInterval(() => {
+//   currentBg = (currentBg + 1) % images.length;
+//   body.style.backgroundImage = `url('${images[currentBg]}')`;
+// }, 30000); // 5s đổi 1 lần
 
     // ảnh cuối
 
