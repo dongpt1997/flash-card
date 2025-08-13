@@ -70,7 +70,10 @@
       speechSynthesis.speak(utterance);
     }
 
-    flashcard.addEventListener("click", () => {
+    flashcard.addEventListener("click", (event) => {
+      if (event.target.tagName.toLowerCase() === "button" || event.target.closest("button")) {
+    return;
+  }
       card.classList.toggle("flipped");
     });
    
@@ -78,8 +81,8 @@
     // ảnh cuối
 
    const texts = [
-    "祝你们学习顺利！",
-    "Chúc các bạn học tốt!"
+    "祝你们学习顺利 !",
+    
   ];
   let index = 0;
   const span = document.getElementById("marquee-text");
@@ -87,4 +90,4 @@
   setInterval(() => {
     index = (index + 1) % texts.length;
     span.textContent = texts[index];
-  }, 5000);
+  }, 6000);
