@@ -361,8 +361,8 @@
     flex-direction: column;
     gap: 12px;
     align-items: center;
-    margin-top: 15px;
-     margin-bottom: 200px;
+    margin-top: 10px;
+     margin-bottom: 90px;
   }
 
   #controls button {
