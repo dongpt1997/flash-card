@@ -1,11 +1,14 @@
- body {
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+body {
    font-family: Arial, sans-serif;
    text-align: center;
-   /* background-image: url(./images/pngtree-chinese-style-chinese-style-ink-classical-antiquity-image_23171.jpg); */
    background-repeat: no-repeat;
    background-attachment: fixed;
    background-size: 100% 100%;
-  /* transition: background-image 1s ease-in-out; mượt khi chuyển ảnh */
   background-color:#EBDFEB ;
   
  }
@@ -301,22 +304,22 @@
 
   /* Card nhỏ lại */
   .flashcard {
-    width: 90%;
-    margin: 0 auto;
-    transform: scale(0.8);
+     width: 95%;
+    height: auto; /* cho co theo nội dung */
+    transform: scale(1); /* bỏ scale để không gây tràn */
   }
 
   /* Nút điều khiển xếp dọc */
   #controls {
-    display: flex;
+     display: flex;
     flex-direction: column;
     gap: 8px;
     align-items: center;
+    margin-bottom: 10px;
   }
 
   #controls button {
     width: 80%;
-    font-size: 1rem;
   }
 
   /* Ẩn banner khi màn hình nhỏ */
@@ -331,9 +334,10 @@
   }
 
   #creator-text {
-    position: static;
-    text-align: center;
-    margin-top: 15px;
+     position: static; /* tránh đè lên controls */
+    margin-top: 10px;
+    max-width: 100%;
+    white-space: normal;
   }
 }
 @media screen and (max-width: 1024px) {
