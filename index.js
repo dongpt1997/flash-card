@@ -44,7 +44,26 @@
                         <p><b>Nghĩa:</b> ${word.meaning}</p>
                         <p><b>Ví dụ:</b> ${word.example}</p>`;
     }
+    const hanziLength = word.hanzi.length;
+let fontSize = "clamp(48px, 20vh, 100px)";
+if (hanziLength > 2) fontSize = "clamp(40px, 18vh, 80px)";
+if (hanziLength > 4) fontSize = "clamp(32px, 16vh, 60px)";
 
+front.innerHTML = `
+  <div style="
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    width:100%;
+    height:100%;
+    font-size:${fontSize};
+    line-height:1;
+    word-break:break-word;
+  ">
+    ${word.hanzi}
+  </div>
+`;
     function nextCard() {
       currentIndex = (currentIndex + 1) % words.length;
       loadCard(currentIndex);
