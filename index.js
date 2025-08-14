@@ -37,33 +37,33 @@
       card.classList.remove("flipped"); // luôn về mặt front
       const word = words[index];
       if (!word) return;
-      front.textContent = word.hanzi;
+      document.querySelector('.front-text').textContent = word.hanzi;
       back.innerHTML = `<p><b>Pinyin:</b> ${word.pinyin}
          <button class="audio-btn" onclick="speak('${word.hanzi}')">🔊</button>
         </p>
                         <p><b>Nghĩa:</b> ${word.meaning}</p>
                         <p><b>Ví dụ:</b> ${word.example}</p>`;
     }
-    const hanziLength = word.hanzi.length;
-let fontSize = "clamp(48px, 20vh, 100px)";
-if (hanziLength > 2) fontSize = "clamp(40px, 18vh, 80px)";
-if (hanziLength > 4) fontSize = "clamp(32px, 16vh, 60px)";
+//     const hanziLength = word.hanzi.length;
+// let fontSize = "clamp(48px, 20vh, 100px)";
+// if (hanziLength > 2) fontSize = "clamp(40px, 18vh, 80px)";
+// if (hanziLength > 4) fontSize = "clamp(32px, 16vh, 60px)";
 
-front.innerHTML = `
-  <div style="
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    width:100%;
-    height:100%;
-    font-size:${fontSize};
-    line-height:1;
-    word-break:break-word;
-  ">
-    ${word.hanzi}
-  </div>
-`;
+// front.innerHTML = `
+//   <div style="
+//     display:flex;
+//     justify-content:center;
+//     align-items:center;
+//     text-align:center;
+//     width:100%;
+//     height:100%;
+//     font-size:${fontSize};
+//     line-height:1;
+//     word-break:break-word;
+//   ">
+//     ${word.hanzi}
+//   </div>
+// `;
     function nextCard() {
       currentIndex = (currentIndex + 1) % words.length;
       loadCard(currentIndex);
@@ -114,11 +114,9 @@ front.innerHTML = `
 
    const texts = [
     "祝你们学习顺利 !",
-    
   ];
   let index = 0;
   const span = document.getElementById("marquee-text");
-
   setInterval(() => {
     index = (index + 1) % texts.length;
     span.textContent = texts[index];
