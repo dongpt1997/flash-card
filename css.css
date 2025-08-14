@@ -127,6 +127,9 @@
 
  input[type="file"] {
    background-color: #F0BD74;
+    max-width: 100%;
+  box-sizing: border-box;
+  white-space: normal; /* cho text xuống dòng khi cần */
  }
 
  button {
@@ -227,7 +230,11 @@
   display: flex;
   align-items: center; /* Căn giữa ảnh và chữ theo chiều dọc */
   gap: 8px; /* Khoảng cách giữa ảnh và chữ */
-
+ max-width: 95vw; /* Không vượt quá chiều rộng màn hình */
+  overflow: hidden; /* Ẩn phần tràn */
+  text-overflow: ellipsis; /* Thêm ... nếu quá dài */
+  white-space: nowrap;
+  font-size: clamp(12px, 2.5vw, 14px); /* Tự co font-size theo màn hình */
 }
 
 
@@ -235,6 +242,7 @@
   width: 24px;
   height: 24px;
   border-radius: 50%; /* Ảnh tròn */
+  flex-shrink: 0; /* Không cho avatar co lại */
 }
 .banner {
   position: fixed;
@@ -275,3 +283,111 @@
 }
 
 
+/* responsive */
+/* ===== Responsive toàn trang ===== */
+
+/* Mặc định cho desktop (giữ nguyên) */
+
+/* Điện thoại dọc và nhỏ hơn */
+@media screen and (max-width: 768px) {
+  body {
+    padding: 5px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  /* Card nhỏ lại */
+  .flashcard {
+    width: 90%;
+    margin: 0 auto;
+    transform: scale(0.8);
+  }
+
+  /* Nút điều khiển xếp dọc */
+  #controls {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+  }
+
+  #controls button {
+    width: 80%;
+    font-size: 1rem;
+  }
+
+  /* Ẩn banner khi màn hình nhỏ */
+  .left-banner,.right-banner {
+    display: none !important;
+  }
+
+  /* Chữ chạy & creator text xuống dưới */
+  .corner-box {
+    position: static;
+    margin-top: 20px;
+  }
+
+  #creator-text {
+    position: static;
+    text-align: center;
+    margin-top: 15px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .banner,
+  .left-banner,
+  .right-banner ,
+  .corner-box{
+    display: none !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  #creator-text {
+    position: fixed;
+    bottom: 10px; /* khoảng cách với mép dưới */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8); /* nền mờ để nổi bật */
+    padding: 5px 10px;
+    border-radius: 10px;
+    z-index: 9999;
+  }
+   #controls {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    margin-top: 15px;
+  }
+
+  #controls button {
+    width: 20%;
+    font-size: 1.1rem;
+    padding: 12px 0;
+    border: none;
+    border-radius: 8px;
+    background-color: #F179B8;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.3s ease;
+  }
+
+  #controls button:hover {
+    background: #956AD6;
+   color: #EBDFEB;
+   transform: translateY(-3px) scale(1.05);
+   box-shadow: 0 6px #b45309;
+   background: linear-gradient(135deg, #F0BD74, #ff9f1c);
+   color: black;
+  }
+
+  #controls button:active {
+    transform: translateY(1px) scale(0.97);
+   box-shadow: 0 3px #b45309;
+  }
+}
