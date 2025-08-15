@@ -340,10 +340,7 @@ body {
 
   /* Footer để tránh đè controls (đơn giản nhất: để static) */
   #creator-text {
-    position: static;
-    margin: 10px auto 12px;
-    max-width: 95vw;
-    white-space: normal;
+    display: none;
   }
 }
 
