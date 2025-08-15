@@ -294,10 +294,9 @@ body {
 /* Điện thoại dọc và nhỏ hơn */
 @media screen and (max-width: 768px) {
   body {
-    padding: 5px;
     margin: 0;
-    padding-bottom: 60px; /* chừa khoảng cho footer */
-    overflow-x: hidden; /* tránh scroll ngang */
+    padding: 5px;
+    overflow-x: hidden;
   }
 
   h1 {
@@ -305,57 +304,49 @@ body {
     text-align: center;
   }
 
-  /* Card nhỏ lại */
+  /* Giữ chiều cao thực cho flashcard (không xẹp) */
   .flashcard {
-     width: 95%;
-    height: auto; /* cho co theo nội dung */
-    transform: scale(1); /* bỏ scale để không gây tràn */
+    width: 92vw;
+    height: clamp(240px, 55svh, 340px); /* svh tốt cho iOS Safari */
+    margin: 12px auto;
+    transform: none; /* bỏ scale để không gây tràn */
   }
+  .card { height: 100%; }
+  .front, .back { min-height: unset; } /* tránh + chiều cao đôi */
 
-  /* Nút điều khiển xếp dọc */
+  /* Font mặt trước dùng theo chiều rộng để không quá to */
+  .front-text { font-size: clamp(36px, 18vw, 96px); }
+
+  /* Nút điều khiển xếp dọc, chừa khoảng dưới */
   #controls {
-     display: flex;
+    display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 12px;
     align-items: center;
-    margin-bottom: 100px;
-    margin-top:15px
+    margin: 12px 0 16px;
   }
-
   #controls button {
-    width: 80%;
+    width: 90vw;
+    max-width: 420px;
+    font-size: 16px;
+    padding: 12px 0;
+    border-radius: 8px;
   }
 
-  /* Ẩn banner khi màn hình nhỏ */
-  .left-banner,.right-banner {
+  /* Ẩn các phần dễ gây tràn */
+  .left-banner, .right-banner, .corner-box {
     display: none !important;
   }
 
-  /* Chữ chạy & creator text xuống dưới */
-  .corner-box {
-    position: static;
-    margin-top: 20px;
-  }
-
+  /* Footer để tránh đè controls (đơn giản nhất: để static) */
   #creator-text {
-     position: static; /* tránh đè lên controls */
-    margin-top: 10px;
-    max-width: 100%;
+    position: static;
+    margin: 10px auto 12px;
+    max-width: 95vw;
     white-space: normal;
-    position: fixed; /* giữ dưới cùng */
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    padding: 8px;
-    background: rgba(255, 255, 255, 0.8);
-    font-size: 14px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
   }
 }
+
 @media screen and (max-width: 1024px) {
   .banner,
   .left-banner,
