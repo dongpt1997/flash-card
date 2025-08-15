@@ -295,6 +295,9 @@ body {
 @media screen and (max-width: 768px) {
   body {
     padding: 5px;
+    margin: 0;
+    padding-bottom: 60px; /* chừa khoảng cho footer */
+    overflow-x: hidden; /* tránh scroll ngang */
   }
 
   h1 {
@@ -339,6 +342,18 @@ body {
     margin-top: 10px;
     max-width: 100%;
     white-space: normal;
+    position: fixed; /* giữ dưới cùng */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
   }
 }
 @media screen and (max-width: 1024px) {
