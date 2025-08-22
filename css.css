@@ -46,7 +46,7 @@ body {
     box-sizing: border-box;
    border-radius: 10px;
    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-   background: #70C2B4;
+   background: #f0f4f3;
    transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
   font-size: clamp(48px, 20vh, 100px); /* tự co giãn */
@@ -94,8 +94,8 @@ body {
    font-size: 2em;
    border-radius: 10px;
    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-   background: #956AD6;
-   color: #EBDFEB;
+   background: #f0f4f3;
+   color: #000000;
    transition: transform 0.3s ease, box-shadow 0.3s ease;
  }
 .back p {
@@ -247,6 +247,7 @@ body {
   border-radius: 50%; /* Ảnh tròn */
   flex-shrink: 0; /* Không cho avatar co lại */
 }
+/* 
 .banner {
   position: fixed;
   top: 50px;
@@ -257,22 +258,23 @@ body {
   font-size: 2.2rem;
   background: linear-gradient(to bottom, #ff4d4f, #ff7875);
   writing-mode: vertical-rl; /* chữ chạy dọc */
-  display: flex;              /* dùng flexbox để căn giữa */
-  align-items: center;        /* canh giữa theo chiều dọc */
-  justify-content: center;    /* canh giữa theo chiều ngang */
+  /* display: flex;            
+  align-items: center;        
+  justify-content: center;    
   text-align: center;
   border-radius: 10px;
   box-shadow: 2px 4px 10px rgba(0,0,0,0.3);
   z-index: 900;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 85%, 0 100%);
-}
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 85%, 0 100%); */
+/* } */ */
+
 
 .left-banner {
-  left: 200px;              /* cách trái màn hình */
+  left: 200px;          
 }
 
 .right-banner {
-  right: 200px;             /* cách phải màn hình */
+  right: 200px;            
   background: linear-gradient(to bottom, #4dabf7, #74c0fc);
 }
 @keyframes sway {
@@ -282,7 +284,7 @@ body {
 
 .left-banner, .right-banner {
   animation: sway 2s infinite ease-in-out;
-  transform-origin: top center; /* quay từ trên */
+  transform-origin: top center;
 }
 
 
