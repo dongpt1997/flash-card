@@ -1,44 +1,49 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="vi">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>生词</title>
-  <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
-  <link rel="stylesheet" href="./css.css">
-  <link rel="icon" type="image/png" sizes="16x16" href="./images/16x16.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/32x32.png">
-   <link rel="icon" type="image/png" sizes="512x512" href="./images/512x512.png">
-  <style></style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Flashcards Hán tự</title>
+  <link rel="stylesheet" href="./style.css">
+  <!-- SheetJS -->
+  <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+  <!-- Pinyin -->
+  <script src="https://unpkg.com/pinyin-pro"></script>
+
+  <style>
+   
+  </style>
 </head>
-<body id="body">
-  <h1 style="color: rgb(21, 21, 22);">生词</h1>
-  <input type="file" id="excelFile" accept=".xlsx,.xls" />
-  <div class="flashcard" id="flashcard" style="display:none;">
-    <div class="card" id="card">
-      <div class="front" id="front">
-        <div class="front-text"></div>
-      </div>
-      <div class="back" id="back"></div>
+
+<body>
+  <div class="wrap">
+    <h1>Flash Card</h1>
+
+    <label class="btn">
+      Chọn file Excel (.xlsx)
+      <input id="file" type="file" accept=".xlsx,.xls" hidden />
+    </label>
+    <div class="btn-div">
+      <button id="next" class="btn next-neon">Next</button>
     </div>
+
+    <div class="card" id="card">
+      <div class="card-inner">
+        <div class="face front" id="front">?</div>
+        <div class="face back">
+          <div class="pinyin" id="pinyin"></div>
+          <div class="meaning" id="meaning"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="stats">Chưa có dữ liệu</div>
   </div>
-  <div id="controls" style="display:none;">
-    <button onclick="prevCard()">上一个</button>
-    <button onclick="nextCard()">下一个</button>
-    <button onclick="randomCard()">随机</button>
-  </div>
-  <div class="corner-box">
-  <img src="./images/matcuoi.png" style="border-radius: 50%;" alt="icon">
-  <div class="marquee">
-    <span id="marquee-text">祝你们学习顺利 !</span>
-  </div>
-</div>
-<div id="creator-text">
-  <img src="images/dong.png" style="border-radius: 50%;" alt="Avatar" class="avatar">
-  Copyright by Dong Pham
-</div>
-<!-- <div class="banner left-banner">活 到 老 学 到 老</div>
-  <div class="banner right-banner">温 故 知 新</div> -->
-   <script src="./index.js"></script>
+
+  <script src="./index.js">
+   
+  </script>
 </body>
+
 </html>
