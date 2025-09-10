@@ -12,7 +12,7 @@
 
   function genPinyin(text) {
     if (!text || !text.trim() || !pinyin) return "Không có pinyin";
-    return pinyin(text, { toneType: "symbol" }).replace(/\s+/g, "");
+    return `/${pinyin(text, { toneType: "symbol" }).replace(/\s+/g, "")}/`;
   }
 
   function showFront(item) {
@@ -53,13 +53,11 @@ card.addEventListener('click', () => {
   if (card.classList.contains('flipped')) {
     showBack(current);
     if (!current.flipped) current.flipped = true; // <-- quan trọng: đánh dấu đã học
-    // (tuỳ chọn) cập nhật thống kê tức thì
-    // const left = cards.filter(c => !c.flipped).length;
-    // stats.textContent = `Còn lại ${left} từ`;
   } else {
     showFront(current);
   }
-});
+}
+);
 
   fileInput.addEventListener('change', async (e) => {
     const f = e.target.files[0];
